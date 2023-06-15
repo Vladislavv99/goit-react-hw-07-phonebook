@@ -1,7 +1,7 @@
 import s from './Filter.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { getFiltered } from '../redux/contactsSelector';
-import { filterContactsAction } from '../redux/contactsSlice';
+import { getFiltered } from 'redux/contactsSelector';
+import { filterContacts } from 'redux/contactsSlice';
 
 
 export  const Filter = () => {
@@ -9,7 +9,7 @@ export  const Filter = () => {
   const filtered = useSelector(getFiltered);
   const handleFilter = ev => {
     const { value } = ev.target;
-    dispatch(filterContactsAction(value.trim()));
+    dispatch(filterContacts(value.trim()));
   };
 
     return (
